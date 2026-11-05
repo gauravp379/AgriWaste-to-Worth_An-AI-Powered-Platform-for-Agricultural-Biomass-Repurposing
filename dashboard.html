@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Role Command Portals - AgriWaste to Worth</title>
+    <meta name="description" content="Role-differentiated operations portal for Farmers (Kisan), Industrial Buyers, and Platform Governance Administrators. Track biomass sales, industrial procurement, and satellite stubble interception.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Academic Demo Sandbox Notice Banner -->
+    <div class="demo-sandbox-banner">
+        <span>⚡ <strong>MAJOR PROJECT DEMO</strong> — Dynamic Role-Based Command Portals (Farmer • Buyer • Admin) with Client-Side Cryptography</span>
+        <a href="https://api.whatsapp.com/send?text=Check%20out%20AgriWaste%20to%20Worth%20-%20AI%20Crop%20Residue%20Marketplace%20http%3A%2F%2Flocalhost%3A5000" target="_blank" aria-label="Share on WhatsApp">
+            <i class="fab fa-whatsapp"></i> Share on WhatsApp
+        </a>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <a href="index.html" class="nav-brand" aria-label="AgriWaste to Worth Home">
+                <i class="fas fa-leaf" aria-hidden="true"></i>
+                <span>AgriWaste to Worth</span>
+            </a>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" data-i18n="navHome">Home</a></li>
+                <li><a href="marketplace.html" data-i18n="navMarket">Marketplace</a></li>
+                <li><a href="ai-analyzer.html" data-i18n="navAnalyzer">AI Analyzer</a></li>
+                <li><a href="chatbot.html" data-i18n="navChatbot">Chatbot</a></li>
+                <li><a href="dashboard.html" class="active" data-i18n="navDashboard">Dashboard</a></li>
+                <li><a href="about.html" data-i18n="navAbout">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Language Switcher -->
+                <div class="lang-selector-group" style="display:flex;gap:4px;background:var(--sand-100);padding:3px;border-radius:var(--radius-pill);">
+                    <button type="button" class="lang-btn active" data-lang="en" onclick="window.switchLanguage('en')" style="border:none;background:transparent;padding:2px 8px;border-radius:var(--radius-pill);font-size:0.75rem;font-weight:700;cursor:pointer;">EN</button>
+                    <button type="button" class="lang-btn" data-lang="hi" onclick="window.switchLanguage('hi')" style="border:none;background:transparent;padding:2px 8px;border-radius:var(--radius-pill);font-size:0.75rem;font-weight:700;cursor:pointer;">हिंदी</button>
+                    <button type="button" class="lang-btn" data-lang="mr" onclick="window.switchLanguage('mr')" style="border:none;background:transparent;padding:2px 8px;border-radius:var(--radius-pill);font-size:0.75rem;font-weight:700;cursor:pointer;">मराठी</button>
+                </div>
+
+                <!-- Theme / Sunlight Contrast Toggles -->
+                <button class="btn-icon" id="themeToggleBtn" aria-label="Toggle Theme" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="btn-icon" id="sunlightContrastBtn" aria-label="Outdoor Sunlight Contrast" title="Outdoor Sunlight Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+
+                <!-- Cart Button -->
+                <button class="btn-icon" id="cartBtn" aria-label="Purchase Cart" onclick="window.location.href='marketplace.html#cartSidebar'">
+                    <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+                    <span class="badge" id="cartBadge">0</span>
+                </button>
+
+                <!-- Notifications -->
+                <button class="btn-icon" id="notificationBtn" aria-label="Notifications" onclick="alert('Notification Center: 3 alerts (1 Baler scheduled, 1 RFQ match, 1 Mandi rate update)')">
+                    <i class="fas fa-bell" aria-hidden="true"></i>
+                    <span class="badge" id="notifBadge">3</span>
+                </button>
+
+                <!-- User Session Menu -->
+                <div class="user-menu" id="userMenu" style="display:none">
+                    <img src="https://ui-avatars.com/api/?name=User&background=1B6A45&color=fff" alt="User" class="user-avatar">
+                    <span class="user-name">Guest</span>
+                    <span class="user-role-badge" id="userRoleBadge" style="margin-left:8px;background:var(--sand-200);color:var(--sand-800);padding:3px 8px;border-radius:var(--radius-pill);font-size:0.75rem;font-weight:600;">Farmer</span>
+                    <button class="btn-text" id="logoutBtn" style="margin-left:8px;font-size:0.8rem;cursor:pointer;">Logout</button>
+                </div>
+                <button class="btn-primary" id="loginBtn">Login</button>
+                <button class="btn-secondary" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Sticky Persona Switcher Bar -->
+    <div class="portal-switcher-bar" id="portalSwitcherBar">
+        <div class="switcher-identity">
+            <img id="switcherAvatar" src="https://ui-avatars.com/api/?name=Ramesh+Singh&background=059669&color=fff" alt="User" class="identity-avatar">
+            <div class="identity-meta">
+                <strong id="switcherName">Farmer Ramesh Singh</strong>
+                <span id="switcherRoleTitle">Verified Agricultural Producer (Punjab)</span>
+            </div>
+        </div>
+        <div class="switcher-pills-group">
+            <span class="switcher-pills-label">View Portal:</span>
+            <button type="button" class="persona-pill-btn pill-farmer active" id="btnSwitchFarmer" onclick="switchPortalView('farmer')">
+                <i class="fas fa-seedling"></i> Farmer (Kisan)
+            </button>
+            <button type="button" class="persona-pill-btn pill-buyer" id="btnSwitchBuyer" onclick="switchPortalView('buyer')">
+                <i class="fas fa-industry"></i> Industrial Buyer
+            </button>
+            <button type="button" class="persona-pill-btn pill-admin" id="btnSwitchAdmin" onclick="switchPortalView('admin')">
+                <i class="fas fa-shield-halved"></i> Platform Admin
+            </button>
+        </div>
+    </div>
+
+    <!-- Dashboard Content with 3 Dedicated Distinct Portals -->
+    <section class="dashboard-section">
+        <div class="container-fluid">
+
+            <!-- ============================================================== -->
+            <!-- PORTAL 1: FARMER / KISAN (EMERALD AGRICULTURAL THEME)           -->
+            <!-- ============================================================== -->
+            <div id="farmerPortalView" class="portal-view theme-farmer active-portal">
+                <!-- Farmer Hero Banner -->
+                <div class="portal-hero-banner animate-fade-up">
+                    <div class="portal-hero-text">
+                        <h1><i class="fas fa-seedling text-white"></i> Kisan Krishi Kendra (किसान कृषि केंद्र)</h1>
+                        <p>Welcome back, <strong id="farmerHeroName">Farmer Ramesh Singh</strong> — Punjab Agricultural Cooperative (#F-9201)</p>
+                        <div class="portal-hero-badges">
+                            <span class="hero-pill"><i class="fas fa-check-circle"></i> Verified Producer</span>
+                            <span class="hero-pill"><i class="fas fa-leaf"></i> 38 Hectares Stubble-Free</span>
+                            <span class="hero-pill"><i class="fas fa-star text-amber"></i> 4.9 Seller Rating</span>
+                        </div>
+                    </div>
+                    <div class="portal-quick-actions">
+                        <a href="marketplace.html" class="btn-action btn-action-primary"><i class="fas fa-plus-circle"></i> List New Crop Waste</a>
+                        <a href="ai-analyzer.html" class="btn-action btn-action-secondary"><i class="fas fa-camera"></i> AI Residue Scan</a>
+                        <button type="button" class="btn-action btn-action-secondary" onclick="requestStubblePickup()"><i class="fas fa-truck-pickup"></i> Book Baler Pickup</button>
+                    </div>
+                </div>
+
+                <!-- Farmer Stats Overview -->
+                <div class="stats-grid animate-fade-up">
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fas fa-rupee-sign"></i></div>
+                        <div class="stat-details">
+                            <span>Residue Sales Earnings</span>
+                            <h3 id="farmerTotalEarnings">₹1,84,500</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> 14.2% this harvest season</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fas fa-recycle"></i></div>
+                        <div class="stat-details">
+                            <span>Biomass Waste Traded</span>
+                            <h3 id="farmerWasteSold">142 Tons</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> Zero burning penalties</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-boxes-stacked"></i></div>
+                        <div class="stat-details">
+                            <span>Active Field Lots</span>
+                            <h3 id="farmerActiveListings">4 Lots</h3>
+                            <small class="stat-change neutral"><i class="fas fa-check"></i> Listed on Marketplace</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-hand-holding-dollar"></i></div>
+                        <div class="stat-details">
+                            <span>Clean Air DBT Subsidy</span>
+                            <h3 id="farmerBonusSubsidy">₹12,400</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> Credited to Bank A/C</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Farmer Charts -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-line text-emerald-600"></i> Biomass Revenue & Quantity (₹)</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="farmerRevenueChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-pie text-emerald-600"></i> Waste Crop Breakdown</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="farmerCropChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-money-bill-trend-up text-emerald-600"></i> Mandi Benchmark Price (₹/Ton)</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="farmerMandiChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Farmer Active Crop Waste Listings Table -->
+                <div class="portal-table-card animate-fade-up">
+                    <div class="portal-table-header">
+                        <h3><i class="fas fa-tractor text-emerald-600"></i> My Active Crop Residue Lots</h3>
+                        <a href="marketplace.html" class="btn-primary" style="padding:0.45rem 0.95rem;font-size:0.82rem;"><i class="fas fa-plus"></i> Add New Lot</a>
+                    </div>
+                    <table class="portal-table">
+                        <thead>
+                            <tr>
+                                <th>Lot ID</th>
+                                <th>Residue Crop</th>
+                                <th>Available Qty</th>
+                                <th>Price (₹/Ton)</th>
+                                <th>Moisture Level</th>
+                                <th>Calorific Value</th>
+                                <th>Marketplace Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="farmerListingsTableBody">
+                            <tr>
+                                <td><strong>#LOT-881</strong></td>
+                                <td><i class="fas fa-wheat-awn text-amber"></i> Rice Paddy Straw (Basmati)</td>
+                                <td>80 Tons</td>
+                                <td>₹5,200</td>
+                                <td><span class="badge-status status-verified">12.0% (Optimal)</span></td>
+                                <td>15.2 MJ/kg</td>
+                                <td><span class="badge-status status-approved"><i class="fas fa-check-circle"></i> Active / Listed</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Viewing Lot #LOT-881 Details')">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#LOT-882</strong></td>
+                                <td><i class="fas fa-seedling text-green"></i> Wheat Straw Bundles (Turi)</td>
+                                <td>40 Tons</td>
+                                <td>₹4,500</td>
+                                <td><span class="badge-status status-verified">13.5% (Good)</span></td>
+                                <td>16.0 MJ/kg</td>
+                                <td><span class="badge-status status-approved"><i class="fas fa-check-circle"></i> Active / Listed</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Viewing Lot #LOT-882 Details')">View</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#LOT-883</strong></td>
+                                <td><i class="fas fa-candy-cane text-purple"></i> Sugarcane Bagasse</td>
+                                <td>22 Tons</td>
+                                <td>₹3,800</td>
+                                <td><span class="badge-status status-pending">35.0% (Moist)</span></td>
+                                <td>9.8 MJ/kg</td>
+                                <td><span class="badge-status status-in-transit"><i class="fas fa-truck"></i> Reserved for Mill</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Viewing Lot #LOT-883 Details')">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Farmer Two Column Widgets: Mandi Rates & DBT Settlements -->
+                <div class="portal-two-col">
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-scale-balanced text-emerald-600"></i> Live Mandi & Mill Biomass Ticker</h3>
+                            <small class="text-slate-500">Updated hourly from e-NAM</small>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Market / Mandi</th><th>Residue Type</th><th>Price/Ton</th><th>7-Day Trend</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Khanna Mandi, Punjab</strong></td><td>Rice Straw</td><td>₹5,250</td><td><span class="text-green"><i class="fas fa-arrow-up"></i> +₹150</span></td></tr>
+                                <tr><td><strong>Karnal, Haryana</strong></td><td>Wheat Stover</td><td>₹4,600</td><td><span class="text-green"><i class="fas fa-arrow-up"></i> +₹100</span></td></tr>
+                                <tr><td><strong>Muzaffarnagar, UP</strong></td><td>Sugarcane Bagasse</td><td>₹3,900</td><td><span class="text-slate-500"><i class="fas fa-minus"></i> Stable</span></td></tr>
+                                <tr><td><strong>Akola, Maharashtra</strong></td><td>Cotton Stalks</td><td>₹2,800</td><td><span class="text-green"><i class="fas fa-arrow-up"></i> +₹80</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-building-columns text-emerald-600"></i> Bank Payouts & DBT Settlements</h3>
+                            <span class="badge-status status-verified">Direct Bank Transfer</span>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Txn Ref</th><th>Buyer / Mill</th><th>Amount</th><th>Status</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>UTR-991204</strong></td><td>Punjab Bio-Energy Corp</td><td>₹78,000</td><td><span class="badge-status status-success"><i class="fas fa-check"></i> Credited</span></td></tr>
+                                <tr><td><strong>UTR-990841</strong></td><td>GreenGrid Power & Paper</td><td>₹45,000</td><td><span class="badge-status status-success"><i class="fas fa-check"></i> Credited</span></td></tr>
+                                <tr><td><strong>DBT-GOV-22</strong></td><td>Paddy Stubble Prevention Scheme</td><td>₹12,400</td><td><span class="badge-status status-success"><i class="fas fa-check"></i> Credited</span></td></tr>
+                                <tr><td><strong>UTR-989211</strong></td><td>Maharani Eco-Fuels</td><td>₹49,100</td><td><span class="badge-status status-pending"><i class="fas fa-clock"></i> Processing</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- PORTAL 2: INDUSTRIAL BUYER (STEEL NAVY & TEAL B2B THEME)       -->
+            <!-- ============================================================== -->
+            <div id="buyerPortalView" class="portal-view theme-buyer">
+                <!-- Buyer Hero Banner -->
+                <div class="portal-hero-banner animate-fade-up">
+                    <div class="portal-hero-text">
+                        <h1><i class="fas fa-industry text-white"></i> Industrial Biomass & Waste Procurement Hub</h1>
+                        <p>Logged in as <strong id="buyerHeroName">GreenGrid Bio-Power Ltd</strong> — Enterprise ID: B-8821 | GSTIN: 03AABCG1234F1Z9</p>
+                        <div class="portal-hero-badges">
+                            <span class="hero-pill"><i class="fas fa-certificate"></i> Tier-1 Clean Energy Off-Taker</span>
+                            <span class="hero-pill"><i class="fas fa-shield-check"></i> ESG Audit Compliant</span>
+                            <span class="hero-pill"><i class="fas fa-bolt"></i> 24/7 Bulk Sourcing Desk</span>
+                        </div>
+                    </div>
+                    <div class="portal-quick-actions">
+                        <button type="button" class="btn-action btn-action-primary" onclick="openPostRfqModal()"><i class="fas fa-file-contract"></i> Post Bulk RFQ</button>
+                        <a href="marketplace.html" class="btn-action btn-action-secondary"><i class="fas fa-cart-shopping"></i> Browse Live Market</a>
+                        <button type="button" class="btn-action btn-action-secondary" onclick="exportBuyerEsgReport()"><i class="fas fa-file-pdf"></i> Download ESG Report</button>
+                    </div>
+                </div>
+
+                <!-- Buyer Stats Overview -->
+                <div class="stats-grid animate-fade-up">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-details">
+                            <span>Raw Material Procurement Spend</span>
+                            <h3 id="buyerTotalSpend">₹8,45,000</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-down"></i> 8.4% cost savings vs fossil coal</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fas fa-weight-hanging"></i></div>
+                        <div class="stat-details">
+                            <span>Volume Procured & Delivered</span>
+                            <h3 id="buyerVolumeProcured">420 Tons</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> 100% lab certified</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-truck-fast"></i></div>
+                        <div class="stat-details">
+                            <span>Active Purchase Orders / In Transit</span>
+                            <h3 id="buyerActiveOrders">6 Shipments</h3>
+                            <small class="stat-change neutral"><i class="fas fa-route"></i> Live GPS Fleet Active</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fas fa-cloud-arrow-down"></i></div>
+                        <div class="stat-details">
+                            <span>Scope 3 Carbon Offset</span>
+                            <h3 id="buyerCarbonOffset">185 Tons CO₂e</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> Verified by Energy Bureau</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buyer Charts -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-area text-sky-600"></i> Monthly Procurement Spend Trend (₹)</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="buyerSpendChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-flask text-sky-600"></i> Supplier Quality: Calorific (MJ/kg) vs Moisture (%)</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="buyerQualityChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-leaf text-sky-600"></i> Scope 3 CO₂ Emissions Avoidance</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="buyerCarbonChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Buyer Active Orders & Logistics Tracking Table -->
+                <div class="portal-table-card animate-fade-up">
+                    <div class="portal-table-header">
+                        <h3><i class="fas fa-truck-front text-sky-600"></i> Active Purchase Orders & Logistics Fleet Tracker</h3>
+                        <span class="badge-status status-info"><i class="fas fa-satellite"></i> GPS Fleet Telematics Active</span>
+                    </div>
+                    <table class="portal-table">
+                        <thead>
+                            <tr>
+                                <th>PO Number</th>
+                                <th>Supplier / Mandi</th>
+                                <th>Material</th>
+                                <th>Quantity</th>
+                                <th>Carrier & Vehicle</th>
+                                <th>Delivery ETA</th>
+                                <th>Status</th>
+                                <th>Weighing Slip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>#PO-9941</strong></td>
+                                <td>Ludhiana Agri Co-op (Pb)</td>
+                                <td>Rice Paddy Straw</td>
+                                <td>30 Tons</td>
+                                <td>Kisan Freight (PB-10-CD-4421)</td>
+                                <td>Today, 5:30 PM</td>
+                                <td><span class="badge-status status-in-transit"><i class="fas fa-truck"></i> In Transit (Karnal Bypass)</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Viewing Weighbridge Slip for PO-9941')">View Slip</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#PO-9942</strong></td>
+                                <td>Kisan Sugar Mill (UP)</td>
+                                <td>Sugarcane Bagasse</td>
+                                <td>50 Tons</td>
+                                <td>EcoLogistics (UP-14-BT-9102)</td>
+                                <td>Tomorrow, 11:00 AM</td>
+                                <td><span class="badge-status status-pending"><i class="fas fa-boxes-packing"></i> Weighbridge Loading</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Weighbridge Slip Pending')">Pending</button></td>
+                            </tr>
+                            <tr>
+                                <td><strong>#PO-9938</strong></td>
+                                <td>Vidarbha Cotton Hub (Mh)</td>
+                                <td>Cotton Stalk Pellets</td>
+                                <td>25 Tons</td>
+                                <td>FastTrack Agri (MH-31-AX-1120)</td>
+                                <td>Delivered Yesterday</td>
+                                <td><span class="badge-status status-success"><i class="fas fa-check-circle"></i> Unloaded & Verified</span></td>
+                                <td><button type="button" class="btn-table-action btn-details" onclick="alert('Weighbridge Verified: 25.1 Metric Tons')">Verified (PDF)</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Buyer Two Column Widgets: Bulk RFQs & Invoices -->
+                <div class="portal-two-col">
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-bullhorn text-sky-600"></i> My Bulk Procurement Requests (RFQs)</h3>
+                            <button type="button" class="btn-table-action btn-details" onclick="openPostRfqModal()">+ New RFQ</button>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Requirement</th><th>Target Qty</th><th>Max Price</th><th>Bids Received</th><th>Status</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Sugarcane Bagasse (<18% moisture)</td><td>300 Tons</td><td>₹3,900/T</td><td><strong>4 Farmer Co-ops</strong></td><td><span class="badge-status status-approved">Open</span></td></tr>
+                                <tr><td>Rice Paddy Straw Bales</td><td>200 Tons</td><td>₹5,300/T</td><td><strong>7 Farmer Co-ops</strong></td><td><span class="badge-status status-approved">Open</span></td></tr>
+                                <tr><td>Groundnut Shells (Biofuel Grade)</td><td>100 Tons</td><td>₹4,900/T</td><td><strong>3 Farmer Co-ops</strong></td><td><span class="badge-status status-review">Evaluating</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-file-invoice-dollar text-sky-600"></i> GST Invoices & Quality Lab Certificates</h3>
+                            <span class="badge-status status-verified">GST 5% Biomass</span>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Invoice #</th><th>Seller Entity</th><th>Amount (Incl. GST)</th><th>Lab Report</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>INV-2026-081</strong></td><td>Punjab Kisan Union</td><td>₹1,63,800</td><td><span class="badge-status status-verified"><i class="fas fa-file-shield"></i> 15.2 MJ/kg</span></td></tr>
+                                <tr><td><strong>INV-2026-077</strong></td><td>Kisan Sugar Mill Co</td><td>₹2,04,750</td><td><span class="badge-status status-verified"><i class="fas fa-file-shield"></i> 10.1 MJ/kg</span></td></tr>
+                                <tr><td><strong>INV-2026-069</strong></td><td>Vidarbha Cotton Hub</td><td>₹1,41,750</td><td><span class="badge-status status-verified"><i class="fas fa-file-shield"></i> 15.8 MJ/kg</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ============================================================== -->
+            <!-- PORTAL 3: PLATFORM ADMIN (DARK COMMAND & CONTROL CENTER)       -->
+            <!-- ============================================================== -->
+            <div id="adminPortalView" class="portal-view theme-admin">
+                <!-- Admin Hero Banner -->
+                <div class="portal-hero-banner animate-fade-up">
+                    <div class="portal-hero-text">
+                        <h1><i class="fas fa-shield-halved text-purple-400"></i> AgriWaste Platform Master Control Console</h1>
+                        <p>System Administrator Mode | Clearance: <strong id="adminHeroName">SuperAdmin Tier-1</strong> | Central Telemetry Node: New Delhi HQ</p>
+                        <div class="portal-hero-badges">
+                            <span class="hero-pill"><i class="fas fa-server"></i> Server: Python 3.10 / Flask Online</span>
+                            <span class="hero-pill"><i class="fas fa-satellite"></i> Thermal Satellite VIIRS Sync: LIVE</span>
+                            <span class="hero-pill"><i class="fas fa-brain"></i> MobileNetV2 AI: 91.2% Acc</span>
+                        </div>
+                    </div>
+                    <div class="portal-quick-actions">
+                        <button type="button" class="btn-action btn-action-primary" onclick="broadcastThermalAlert()"><i class="fas fa-tower-broadcast"></i> Dispatch Stubble Alert</button>
+                        <button type="button" class="btn-action btn-action-secondary" onclick="alert('Exporting Master Regulatory Audit (PDF)...')"><i class="fas fa-file-export"></i> ESG Audit Ledger</button>
+                        <button type="button" class="btn-action btn-action-secondary" onclick="alert('Running Diagnostic on AI Inference Pipeline...')"><i class="fas fa-microchip"></i> AI Health Check</button>
+                    </div>
+                </div>
+
+                <!-- Admin Stats Overview -->
+                <div class="stats-grid animate-fade-up">
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fas fa-chart-pie"></i></div>
+                        <div class="stat-details">
+                            <span>Platform Gross Merchandise Value (GMV)</span>
+                            <h3 id="adminGmv">₹42.8 Lakhs</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> 22.5% MoM marketplace growth</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fas fa-users-gear"></i></div>
+                        <div class="stat-details">
+                            <span>Registered Network Participants</span>
+                            <h3 id="adminNetworkCount">1,352 Entities</h3>
+                            <small class="stat-change positive"><i class="fas fa-user-plus"></i> 1,240 Farmers | 84 Buyers | 28 Fleet</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon red" style="background:#fee2e2;color:#ef4444;"><i class="fas fa-fire-flame-curved"></i></div>
+                        <div class="stat-details">
+                            <span>Satellite Thermal Stubble Hotspots</span>
+                            <h3 id="adminHotspots" style="color:#ef4444;">3 Active Alerts</h3>
+                            <small class="stat-change negative" style="color:#ef4444;"><i class="fas fa-triangle-exclamation"></i> North Zone Harvest Corridor</small>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fas fa-coins"></i></div>
+                        <div class="stat-details">
+                            <span>Platform 2% Commission Revenue</span>
+                            <h3 id="adminRevenue">₹85,600</h3>
+                            <small class="stat-change positive"><i class="fas fa-arrow-up"></i> Escrow Reserve: ₹3.8L</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Charts -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-line text-purple-400"></i> Daily Trading Volume & Marketplace GMV (₹)</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="adminGmvChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-fire-burner text-purple-400"></i> Stubble Burning Incidents Intercepted & Prevented</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="adminBurnChart"></canvas></div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-users text-purple-400"></i> Platform Ecosystem Stakeholders</h3>
+                        </div>
+                        <div class="chart-container"><canvas id="adminUserChart"></canvas></div>
+                    </div>
+                </div>
+
+                <!-- Admin KYC Verification Queue Table -->
+                <div class="portal-table-card animate-fade-up">
+                    <div class="portal-table-header">
+                        <h3><i class="fas fa-user-shield text-purple-400"></i> Pending User & Enterprise KYC Approval Queue</h3>
+                        <span class="badge-status status-review"><i class="fas fa-clock"></i> 3 Awaiting Clearance</span>
+                    </div>
+                    <table class="portal-table">
+                        <thead>
+                            <tr>
+                                <th>Applicant ID</th>
+                                <th>Entity / Name</th>
+                                <th>Role Requested</th>
+                                <th>Location</th>
+                                <th>Govt ID / GSTIN</th>
+                                <th>Submission Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminKycTableBody">
+                            <tr id="kycRow1">
+                                <td><strong>#KYC-109</strong></td>
+                                <td>Harjit Singh (Kisan Group)</td>
+                                <td><span class="badge-status status-verified">🌾 Farmer Producer</span></td>
+                                <td>Amritsar, Punjab</td>
+                                <td>Aadhaar XXXX-9921</td>
+                                <td>Today, 09:15 AM</td>
+                                <td>
+                                    <button type="button" class="btn-table-action btn-approve" onclick="approveKyc('kycRow1', 'Harjit Singh')"><i class="fas fa-check"></i> Approve</button>
+                                    <button type="button" class="btn-table-action btn-reject" onclick="rejectKyc('kycRow1')"><i class="fas fa-times"></i> Reject</button>
+                                </td>
+                            </tr>
+                            <tr id="kycRow2">
+                                <td><strong>#KYC-110</strong></td>
+                                <td>EcoPaper Industries Pvt Ltd</td>
+                                <td><span class="badge-status status-corporate">🏭 Industrial Buyer</span></td>
+                                <td>Ahmedabad, Gujarat</td>
+                                <td>GSTIN 24AAACE8891P1ZX</td>
+                                <td>Yesterday</td>
+                                <td>
+                                    <button type="button" class="btn-table-action btn-approve" onclick="approveKyc('kycRow2', 'EcoPaper Industries')"><i class="fas fa-check"></i> Approve</button>
+                                    <button type="button" class="btn-table-action btn-reject" onclick="rejectKyc('kycRow2')"><i class="fas fa-times"></i> Reject</button>
+                                </td>
+                            </tr>
+                            <tr id="kycRow3">
+                                <td><strong>#KYC-111</strong></td>
+                                <td>Desh Agro Transporters</td>
+                                <td><span class="badge-status status-info">🚛 Fleet Transporter</span></td>
+                                <td>Karnal, Haryana</td>
+                                <td>Transport Permit HR-05-992</td>
+                                <td>2 days ago</td>
+                                <td>
+                                    <button type="button" class="btn-table-action btn-approve" onclick="approveKyc('kycRow3', 'Desh Agro Transporters')"><i class="fas fa-check"></i> Approve</button>
+                                    <button type="button" class="btn-table-action btn-reject" onclick="rejectKyc('kycRow3')"><i class="fas fa-times"></i> Reject</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Admin Two Column Widgets: Satellite Thermal Alerts & AI Telemetry -->
+                <div class="portal-two-col">
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-satellite-dish text-purple-400"></i> Satellite Thermal Stubble Hotspots (VIIRS)</h3>
+                            <span class="badge-status status-danger">3 Thermal Anomalies</span>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Location & Coordinates</th><th>Burn Risk</th><th>Crop Type</th><th>Action</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Karnal, Sector 4</strong> (30.01°N, 76.98°E)</td><td><span class="badge-status status-danger">Critical (FRP 48 MW)</span></td><td>Paddy Stubble</td><td><button type="button" class="btn-table-action btn-reject" onclick="dispatchSmsAlert('Karnal Sector 4')">Send SMS Warning</button></td></tr>
+                                <tr><td><strong>Sangrur, Field 12</strong> (30.24°N, 75.84°E)</td><td><span class="badge-status status-pending">Moderate (FRP 24 MW)</span></td><td>Paddy Stubble</td><td><button type="button" class="btn-table-action btn-reject" onclick="dispatchSmsAlert('Sangrur Field 12')">Send SMS Warning</button></td></tr>
+                                <tr><td><strong>Patiala Outer</strong> (30.33°N, 76.39°E)</td><td><span class="badge-status status-pending">Elevated Heat Signature</span></td><td>Wheat Straw</td><td><button type="button" class="btn-table-action btn-reject" onclick="dispatchSmsAlert('Patiala Outer')">Send SMS Warning</button></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="portal-table-card">
+                        <div class="portal-table-header">
+                            <h3><i class="fas fa-server text-purple-400"></i> AI Model & Infrastructure Telemetry</h3>
+                            <span class="badge-status status-approved">All Systems Operational</span>
+                        </div>
+                        <table class="portal-table">
+                            <thead>
+                                <tr><th>Component</th><th>Status</th><th>Latency / Metric</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Plant Classifier (MobileNetV2)</strong></td><td><span class="badge-status status-approved">Active (GPU/CPU)</span></td><td>115ms / 91.2% Acc</td></tr>
+                                <tr><td><strong>AgriBot Knowledge Engine</strong></td><td><span class="badge-status status-approved">Real-time Grounded</span></td><td>142 Verified Rules</td></tr>
+                                <tr><td><strong>Groq LLM Inference API</strong></td><td><span class="badge-status status-approved">Connected (qwen3.8-27b)</span></td><td>340 tok/sec</td></tr>
+                                <tr><td><strong>Flask Static Dataset Route</strong></td><td><span class="badge-status status-approved">Mounted / 16 Categories</span></td><td>100% Image Hit-Rate</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo" style="background:var(--earth-950);color:var(--sand-300);padding:var(--space-12) 0 var(--space-6);border-top:1px solid #1C2B22;margin-top:var(--space-12);">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:var(--space-8);margin-bottom:var(--space-10);">
+                <div>
+                    <h3 style="color:#FFFFFF;font-size:var(--text-xl);margin-bottom:var(--space-3);"><i class="fas fa-leaf" style="color:var(--primary-color);"></i> AgriWaste to Worth</h3>
+                    <p style="font-size:var(--text-sm);line-height:1.6;color:var(--sand-300);">
+                        India's sovereign agricultural residue exchange. Connecting farmers directly to biomass power plants, bio-CNG producers, and compost manufacturers with verified testing.
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color:#FFFFFF;font-size:var(--text-base);margin-bottom:var(--space-3);font-family:var(--font-body);font-weight:700;">Platform Portals</h4>
+                    <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--space-2);font-size:var(--text-sm);">
+                        <li><a href="#" onclick="switchPortalView('farmer');return false;" style="color:var(--sand-300);">Kisan Krishi Kendra (Farmer)</a></li>
+                        <li><a href="#" onclick="switchPortalView('buyer');return false;" style="color:var(--sand-300);">Industrial Procurement Hub (Buyer)</a></li>
+                        <li><a href="#" onclick="switchPortalView('admin');return false;" style="color:var(--sand-300);">Master Platform Governance (Admin)</a></li>
+                        <li><a href="marketplace.html" style="color:var(--sand-300);">Live Commodity Marketplace</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:#FFFFFF;font-size:var(--text-base);margin-bottom:var(--space-3);font-family:var(--font-body);font-weight:700;">Regulatory Telemetry</h4>
+                    <p style="font-size:var(--text-sm);color:var(--sand-300);line-height:1.6;">
+                        <strong>BEE ESG Benchmark:</strong> Scope 3 Avoidance<br>
+                        <strong>VIIRS Satellites:</strong> NASA / ISRO Thermal Intercept<br>
+                        <strong>Toll-Free Kisan Desk:</strong> 1800-AGRI-BURN
+                    </p>
+                </div>
+            </div>
+
+            <div style="display:flex;justify-content:space-between;align-items:center;border-top:1px solid #1C2B22;padding-top:var(--space-6);flex-wrap:wrap;gap:var(--space-4);font-size:var(--text-xs);color:var(--sand-500);">
+                <span>© 2026 AgriWaste to Worth. Academic Capstone Project. Zero Rights Reserved.</span>
+                <span class="tabular">National e-NAM & BEE Aligned System Node: DL-NCR-01</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Auth Modal Container -->
+    <div id="authModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+        <div class="modal-content">
+            <button class="close" aria-label="Close modal">&times;</button>
+            <div class="auth-container">
+                <div class="auth-form" id="loginForm">
+                    <h2 id="modalHeading">Welcome Back</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="loginEmail">Email / Phone</label>
+                            <input type="email" id="loginEmail" autocomplete="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" autocomplete="current-password" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Login</button>
+                        <p class="auth-switch" style="margin-top:var(--space-3);text-align:center;font-size:var(--text-xs);">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                    </form>
+                </div>
+                <div class="auth-form hidden" id="signupForm">
+                    <h2>Create Account</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input type="text" id="signupName" autocomplete="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" autocomplete="new-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userType">Role on Marketplace</label>
+                            <select id="userType" required>
+                                <option value="farmer">Farmer / Residue Producer</option>
+                                <option value="buyer">Industrial Buyer (Power / Bio-CNG)</option>
+                                <option value="processor">Aggregator / Transporter</option>
+                                <option value="admin">Platform Administrator</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Sign Up</button>
+                        <p class="auth-switch" style="margin-top:var(--space-3);text-align:center;font-size:var(--text-xs);">Already have an account? <a href="#" id="showLogin">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/image_map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>

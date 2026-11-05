@@ -1,0 +1,26 @@
+{
+  "name": "agriwaste-to-worth",
+  "version": "2.0.0",
+  "description": "AI-Powered Sovereign Agricultural Residue Marketplace & Multi-Role Governance Platform",
+  "main": "index.html",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:mobile": "playwright test --project=\"Mobile Chrome\"",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.42.0"
+  },
+  "keywords": [
+    "agritech",
+    "crop-residue",
+    "stubble-burning",
+    "biomass-marketplace",
+    "ai-classifier",
+    "editorial-agrarian"
+  ],
+  "author": "AgriWaste Major Project Research Group",
+  "license": "MIT"
+}
+

@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+ENV/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Streamlit
+.streamlit/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large models (if you want to use LFS, but for small ones it's fine)
+# models/
+# uploads/
+results/
+temp/
+
+# Personal documents accidentally stored with local analysis uploads
+uploads/analysis/B223_aws-academy-graduate-cloud-architecting-training-ba.png
+uploads/analysis/Internship_Certificate.jpeg

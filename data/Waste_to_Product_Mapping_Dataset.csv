@@ -1,0 +1,321 @@
+Crop,Waste_Type,Recommended_Product,Conversion_Efficiency(%),CO2_Savings(kg_per_ton),Market_Value(₹_per_ton),Energy_Output(MJ/kg),Processing_Time(days),Typical_Use_Case_Notes
+Sugarcane,Bagasse,Animal Feed,64.63,163.11,3424.08,2.12,19,Bagasse from Sugarcane often used for animal feed in rural processors
+Sugarcane,Sugarcane Trash,Compost,61.04,150.75,1553.07,1.05,8,Sugarcane Trash from Sugarcane often used for compost in rural processors
+Groundnut,Groundnut Shell,Compost,80.62,80.91,3111.64,2.52,15,Groundnut Shell from Groundnut often used for compost in rural processors
+Jute,Jute Leaves,Compost,67.54,94.31,2259.85,2.41,13,Jute Leaves from Jute often used for compost in rural processors
+Jute,Jute Leaves,Compost,85.54,216.24,2257.07,1.84,19,Jute Leaves from Jute often used for compost in rural processors
+Maize,Maize Stalk,Biogas,74.66,141.02,2926.04,5.32,4,Maize Stalk from Maize often used for biogas in rural processors
+Banana,Banana Peel,Biogas,59.73,165.67,3184.58,9.45,8,Banana Peel from Banana often used for biogas in rural processors
+Maize,Maize Cob,Animal Feed,77.22,94.27,2909.42,3.67,10,Maize Cob from Maize often used for animal feed in rural processors
+Banana,Banana Stem,Compost,68.02,124.16,2035.48,0.58,8,Banana Stem from Banana often used for compost in rural processors
+Jute,Jute Stick,Animal Feed,72.47,150.0,2142.89,5.42,6,Jute Stick from Jute often used for animal feed in rural processors
+Banana,Banana Stem,Biofuel,89.24,163.86,6990.15,13.99,18,Banana Stem from Banana often used for biofuel in rural processors
+Cotton,Cotton Stalk,Compost,90.14,102.4,2860.96,0.88,4,Cotton Stalk from Cotton often used for compost in rural processors
+Groundnut,Groundnut Stover,Briquettes,91.9,314.22,6443.12,15.29,2,Groundnut Stover from Groundnut often used for briquettes in rural processors
+Sugarcane,Sugarcane Trash,Briquettes,68.01,210.74,6815.26,14.35,10,Sugarcane Trash from Sugarcane often used for briquettes in rural processors
+Rice,Paddy Straw,Briquettes,87.73,159.78,4495.66,15.08,7,Paddy Straw from Rice often used for briquettes in rural processors
+Wheat,Wheat Chaff,Paper Pulp,70.49,299.38,5995.0,8.57,11,Wheat Chaff from Wheat often used for paper pulp in rural processors
+Banana,Banana Peel,Compost,90.73,91.99,2471.98,2.87,4,Banana Peel from Banana often used for compost in rural processors
+Rice,Paddy Straw,Biofuel,90.56,225.53,5426.38,11.65,8,Paddy Straw from Rice often used for biofuel in rural processors
+Banana,Banana Stem,Biofuel,91.87,207.62,5070.3,16.5,5,Banana Stem from Banana often used for biofuel in rural processors
+Banana,Banana Peel,Compost,71.83,112.22,1940.43,1.97,4,Banana Peel from Banana often used for compost in rural processors
+Wheat,Wheat Straw,Compost,91.69,89.92,1976.01,2.65,17,Wheat Straw from Wheat often used for compost in rural processors
+Banana,Banana Peel,Animal Feed,87.74,126.17,3683.09,3.86,15,Banana Peel from Banana often used for animal feed in rural processors
+Banana,Banana Peel,Compost,83.06,137.55,3227.67,1.39,3,Banana Peel from Banana often used for compost in rural processors
+Sugarcane,Bagasse,Paper Pulp,88.21,168.58,4074.77,7.8,19,Bagasse from Sugarcane often used for paper pulp in rural processors
+Cotton,Cotton Stalk,Biofuel,69.95,294.9,3301.54,14.63,19,Cotton Stalk from Cotton often used for biofuel in rural processors
+Sugarcane,Bagasse,Animal Feed,89.97,195.66,4023.28,5.18,9,Bagasse from Sugarcane often used for animal feed in rural processors
+Rice,Rice Husk,Compost,76.85,206.34,1829.27,2.66,2,Rice Husk from Rice often used for compost in rural processors
+Groundnut,Groundnut Stover,Biochar,89.83,293.25,6341.17,10.85,19,Groundnut Stover from Groundnut often used for biochar in rural processors
+Cotton,Cotton Stalk,Biogas,60.38,204.25,3735.02,11.78,12,Cotton Stalk from Cotton often used for biogas in rural processors
+Wheat,Wheat Straw,Biofuel,78.58,151.49,6843.12,18.53,4,Wheat Straw from Wheat often used for biofuel in rural processors
+Rice,Paddy Straw,Compost,83.63,96.78,3280.57,1.09,9,Paddy Straw from Rice often used for compost in rural processors
+Wheat,Wheat Straw,Biofuel,82.75,183.27,4043.06,15.65,12,Wheat Straw from Wheat often used for biofuel in rural processors
+Banana,Banana Stem,Biofuel,68.53,211.44,6716.07,16.46,4,Banana Stem from Banana often used for biofuel in rural processors
+Wheat,Wheat Chaff,Briquettes,91.96,134.65,3852.62,19.96,10,Wheat Chaff from Wheat often used for briquettes in rural processors
+Rice,Rice Husk,Biofuel,88.74,151.55,6334.98,13.7,11,Rice Husk from Rice often used for biofuel in rural processors
+Wheat,Wheat Chaff,Animal Feed,58.63,97.03,3935.31,5.39,19,Wheat Chaff from Wheat often used for animal feed in rural processors
+Rice,Rice Husk,Biochar,82.98,184.79,5927.22,15.18,10,Rice Husk from Rice often used for biochar in rural processors
+Cotton,Cotton Gin Waste,Biochar,61.93,322.46,3389.57,14.34,12,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Rice,Rice Husk,Briquettes,85.01,205.54,3038.68,15.52,4,Rice Husk from Rice often used for briquettes in rural processors
+Rice,Paddy Straw,Briquettes,80.73,145.49,4233.03,11.48,3,Paddy Straw from Rice often used for briquettes in rural processors
+Jute,Jute Stick,Animal Feed,63.73,169.22,3921.92,1.51,15,Jute Stick from Jute often used for animal feed in rural processors
+Rice,Paddy Straw,Biogas,84.17,258.65,2079.32,10.68,12,Paddy Straw from Rice often used for biogas in rural processors
+Groundnut,Groundnut Shell,Biochar,66.05,224.16,3366.52,15.01,17,Groundnut Shell from Groundnut often used for biochar in rural processors
+Banana,Banana Peel,Biogas,62.24,256.84,2713.36,10.74,8,Banana Peel from Banana often used for biogas in rural processors
+Groundnut,Groundnut Stover,Compost,90.25,119.08,2782.96,2.92,14,Groundnut Stover from Groundnut often used for compost in rural processors
+Jute,Jute Stick,Biofuel,88.68,236.12,6934.2,12.61,3,Jute Stick from Jute often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Briquettes,84.67,241.24,5045.69,13.14,14,Sugarcane Trash from Sugarcane often used for briquettes in rural processors
+Banana,Banana Stem,Compost,84.81,209.58,2576.9,0.5,8,Banana Stem from Banana often used for compost in rural processors
+Jute,Jute Leaves,Compost,93.21,167.24,2826.77,2.8,5,Jute Leaves from Jute often used for compost in rural processors
+Maize,Maize Stalk,Biofuel,73.81,230.88,3767.36,16.97,14,Maize Stalk from Maize often used for biofuel in rural processors
+Rice,Rice Husk,Compost,79.18,120.17,2359.78,0.5,20,Rice Husk from Rice often used for compost in rural processors
+Jute,Jute Leaves,Biogas,65.48,185.17,4883.78,6.5,7,Jute Leaves from Jute often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Briquettes,67.52,166.97,4241.68,19.52,8,Sugarcane Trash from Sugarcane often used for briquettes in rural processors
+Rice,Paddy Straw,Compost,68.57,198.96,1645.66,1.69,15,Paddy Straw from Rice often used for compost in rural processors
+Banana,Banana Stem,Biofuel,75.79,257.52,6570.64,11.48,5,Banana Stem from Banana often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Briquettes,86.71,212.91,5229.62,16.96,5,Groundnut Shell from Groundnut often used for briquettes in rural processors
+Cotton,Cotton Stalk,Biofuel,83.02,239.09,6800.16,19.88,16,Cotton Stalk from Cotton often used for biofuel in rural processors
+Groundnut,Groundnut Stover,Biogas,76.03,146.65,2791.17,8.32,10,Groundnut Stover from Groundnut often used for biogas in rural processors
+Cotton,Cotton Stalk,Briquettes,76.88,166.9,4343.39,17.14,19,Cotton Stalk from Cotton often used for briquettes in rural processors
+Sugarcane,Bagasse,Biogas,58.09,227.16,2205.53,9.86,15,Bagasse from Sugarcane often used for biogas in rural processors
+Jute,Jute Leaves,Biogas,52.18,170.11,4463.35,10.83,2,Jute Leaves from Jute often used for biogas in rural processors
+Groundnut,Groundnut Stover,Biofuel,90.45,198.0,6566.57,12.99,15,Groundnut Stover from Groundnut often used for biofuel in rural processors
+Banana,Banana Stem,Biogas,59.55,169.99,4140.4,8.4,14,Banana Stem from Banana often used for biogas in rural processors
+Rice,Rice Husk,Briquettes,91.48,301.39,5367.57,15.34,2,Rice Husk from Rice often used for briquettes in rural processors
+Sugarcane,Sugarcane Trash,Biogas,80.34,146.83,3047.53,6.27,16,Sugarcane Trash from Sugarcane often used for biogas in rural processors
+Jute,Jute Leaves,Biogas,59.74,175.88,4671.71,11.66,17,Jute Leaves from Jute often used for biogas in rural processors
+Wheat,Wheat Straw,Briquettes,71.05,311.46,3161.03,10.69,2,Wheat Straw from Wheat often used for briquettes in rural processors
+Banana,Banana Peel,Compost,81.75,146.3,1728.78,1.1,8,Banana Peel from Banana often used for compost in rural processors
+Cotton,Cotton Gin Waste,Biochar,74.02,352.02,6288.94,14.06,7,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Maize,Maize Cob,Animal Feed,55.9,154.83,4099.61,2.56,14,Maize Cob from Maize often used for animal feed in rural processors
+Banana,Banana Peel,Animal Feed,79.17,74.27,3653.95,4.14,5,Banana Peel from Banana often used for animal feed in rural processors
+Wheat,Wheat Chaff,Briquettes,76.57,221.19,4364.92,13.71,15,Wheat Chaff from Wheat often used for briquettes in rural processors
+Cotton,Cotton Stalk,Biofuel,90.94,285.74,5829.23,16.36,15,Cotton Stalk from Cotton often used for biofuel in rural processors
+Rice,Rice Husk,Compost,76.27,162.95,2144.61,2.56,9,Rice Husk from Rice often used for compost in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,71.58,242.07,4515.96,14.65,2,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Cotton,Cotton Gin Waste,Biogas,67.06,146.5,2894.91,7.48,10,Cotton Gin Waste from Cotton often used for biogas in rural processors
+Wheat,Wheat Straw,Compost,68.45,157.72,1980.65,1.52,17,Wheat Straw from Wheat often used for compost in rural processors
+Cotton,Cotton Gin Waste,Biochar,60.66,228.97,4246.21,10.94,20,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Jute,Jute Leaves,Animal Feed,73.58,164.43,2593.9,3.13,16,Jute Leaves from Jute often used for animal feed in rural processors
+Maize,Maize Stalk,Briquettes,71.22,183.11,5971.52,17.21,7,Maize Stalk from Maize often used for briquettes in rural processors
+Banana,Banana Peel,Animal Feed,71.95,196.72,3059.13,4.62,11,Banana Peel from Banana often used for animal feed in rural processors
+Sugarcane,Bagasse,Compost,67.96,81.98,2568.27,0.95,10,Bagasse from Sugarcane often used for compost in rural processors
+Wheat,Wheat Straw,Briquettes,83.83,293.69,4963.51,11.26,2,Wheat Straw from Wheat often used for briquettes in rural processors
+Maize,Maize Stalk,Biofuel,76.89,130.28,6764.25,11.84,17,Maize Stalk from Maize often used for biofuel in rural processors
+Sugarcane,Bagasse,Paper Pulp,82.29,266.7,3955.18,6.46,20,Bagasse from Sugarcane often used for paper pulp in rural processors
+Maize,Maize Cob,Briquettes,68.2,241.26,6162.96,17.64,9,Maize Cob from Maize often used for briquettes in rural processors
+Groundnut,Groundnut Stover,Paper Pulp,77.43,222.9,5205.89,6.53,3,Groundnut Stover from Groundnut often used for paper pulp in rural processors
+Sugarcane,Bagasse,Animal Feed,62.39,81.99,2217.15,4.3,4,Bagasse from Sugarcane often used for animal feed in rural processors
+Rice,Paddy Straw,Biofuel,77.16,178.25,3925.9,15.94,11,Paddy Straw from Rice often used for biofuel in rural processors
+Cotton,Cotton Stalk,Biogas,82.34,212.51,4115.79,10.51,8,Cotton Stalk from Cotton often used for biogas in rural processors
+Groundnut,Groundnut Shell,Briquettes,82.49,285.33,3285.64,19.08,7,Groundnut Shell from Groundnut often used for briquettes in rural processors
+Maize,Maize Stalk,Biofuel,68.36,259.95,6770.7,16.89,18,Maize Stalk from Maize often used for biofuel in rural processors
+Cotton,Cotton Gin Waste,Biofuel,81.15,266.91,5414.85,18.89,2,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Sugarcane,Bagasse,Animal Feed,84.26,193.11,4198.97,3.88,10,Bagasse from Sugarcane often used for animal feed in rural processors
+Wheat,Wheat Straw,Biofuel,79.01,175.63,6987.78,14.42,15,Wheat Straw from Wheat often used for biofuel in rural processors
+Cotton,Cotton Stalk,Biofuel,74.39,254.03,6430.93,13.33,12,Cotton Stalk from Cotton often used for biofuel in rural processors
+Groundnut,Groundnut Stover,Compost,83.19,186.47,1573.39,1.5,4,Groundnut Stover from Groundnut often used for compost in rural processors
+Jute,Jute Leaves,Biogas,54.06,255.68,4639.77,10.41,2,Jute Leaves from Jute often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biofuel,70.06,271.29,5501.63,13.62,3,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Banana,Banana Stem,Biogas,82.47,225.69,2388.56,8.07,9,Banana Stem from Banana often used for biogas in rural processors
+Rice,Rice Husk,Biofuel,79.91,318.45,6651.72,10.93,16,Rice Husk from Rice often used for biofuel in rural processors
+Sugarcane,Bagasse,Paper Pulp,93.32,269.92,4746.47,4.75,17,Bagasse from Sugarcane often used for paper pulp in rural processors
+Cotton,Cotton Stalk,Biofuel,79.88,304.37,5032.96,13.84,6,Cotton Stalk from Cotton often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,74.18,173.43,3010.26,17.88,11,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Cotton,Cotton Stalk,Biofuel,79.54,230.38,5173.72,13.45,16,Cotton Stalk from Cotton often used for biofuel in rural processors
+Jute,Jute Stick,Animal Feed,63.36,179.84,2785.86,2.91,12,Jute Stick from Jute often used for animal feed in rural processors
+Cotton,Cotton Gin Waste,Paper Pulp,94.71,260.84,3956.32,7.75,3,Cotton Gin Waste from Cotton often used for paper pulp in rural processors
+Rice,Rice Husk,Biofuel,88.6,225.19,4827.71,14.4,6,Rice Husk from Rice often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Biofuel,77.68,187.71,5770.82,19.69,4,Groundnut Shell from Groundnut often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,71.94,187.83,3731.25,11.21,4,Jute Leaves from Jute often used for biogas in rural processors
+Banana,Banana Stem,Biogas,76.14,117.72,4027.99,8.04,5,Banana Stem from Banana often used for biogas in rural processors
+Cotton,Cotton Stalk,Briquettes,89.39,279.23,4173.47,10.46,13,Cotton Stalk from Cotton often used for briquettes in rural processors
+Groundnut,Groundnut Shell,Briquettes,79.34,278.5,3679.93,15.66,4,Groundnut Shell from Groundnut often used for briquettes in rural processors
+Groundnut,Groundnut Shell,Compost,91.95,144.56,2007.95,0.86,10,Groundnut Shell from Groundnut often used for compost in rural processors
+Wheat,Wheat Chaff,Compost,83.72,141.84,2191.13,0.89,20,Wheat Chaff from Wheat often used for compost in rural processors
+Maize,Maize Stalk,Briquettes,77.33,319.87,6413.34,13.02,5,Maize Stalk from Maize often used for briquettes in rural processors
+Banana,Banana Stem,Briquettes,80.52,179.05,6911.78,19.93,14,Banana Stem from Banana often used for briquettes in rural processors
+Maize,Maize Cob,Animal Feed,85.28,196.3,3985.48,4.89,17,Maize Cob from Maize often used for animal feed in rural processors
+Maize,Maize Cob,Animal Feed,83.07,86.62,2401.5,2.1,6,Maize Cob from Maize often used for animal feed in rural processors
+Sugarcane,Bagasse,Compost,87.6,131.08,1762.82,0.58,11,Bagasse from Sugarcane often used for compost in rural processors
+Jute,Jute Leaves,Compost,67.03,202.7,2231.72,2.47,18,Jute Leaves from Jute often used for compost in rural processors
+Maize,Maize Cob,Biofuel,89.68,313.48,4180.57,19.44,12,Maize Cob from Maize often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Compost,64.93,200.42,2948.43,2.92,14,Sugarcane Trash from Sugarcane often used for compost in rural processors
+Jute,Jute Stick,Biochar,74.99,167.19,4784.92,10.64,10,Jute Stick from Jute often used for biochar in rural processors
+Groundnut,Groundnut Stover,Biofuel,83.22,243.91,6772.68,14.71,12,Groundnut Stover from Groundnut often used for biofuel in rural processors
+Banana,Banana Peel,Animal Feed,83.83,102.31,2779.91,5.55,6,Banana Peel from Banana often used for animal feed in rural processors
+Wheat,Wheat Straw,Briquettes,91.89,166.96,5150.19,11.16,14,Wheat Straw from Wheat often used for briquettes in rural processors
+Cotton,Cotton Gin Waste,Animal Feed,88.23,135.63,3209.62,4.48,6,Cotton Gin Waste from Cotton often used for animal feed in rural processors
+Groundnut,Groundnut Shell,Compost,81.55,119.16,2880.56,2.85,8,Groundnut Shell from Groundnut often used for compost in rural processors
+Cotton,Cotton Gin Waste,Biogas,79.94,223.42,3742.29,5.7,13,Cotton Gin Waste from Cotton often used for biogas in rural processors
+Wheat,Wheat Chaff,Compost,66.64,198.72,2409.43,0.81,8,Wheat Chaff from Wheat often used for compost in rural processors
+Wheat,Wheat Straw,Briquettes,71.58,232.92,3274.44,11.26,19,Wheat Straw from Wheat often used for briquettes in rural processors
+Banana,Banana Peel,Compost,71.5,206.07,1505.67,0.87,6,Banana Peel from Banana often used for compost in rural processors
+Rice,Rice Husk,Briquettes,67.97,146.36,4432.97,18.66,9,Rice Husk from Rice often used for briquettes in rural processors
+Jute,Jute Stick,Biogas,59.29,175.77,2363.68,5.89,4,Jute Stick from Jute often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biochar,73.76,239.44,4152.66,13.94,3,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Maize,Maize Stalk,Compost,62.13,136.23,2872.19,1.7,17,Maize Stalk from Maize often used for compost in rural processors
+Cotton,Cotton Stalk,Compost,71.27,97.67,2748.63,0.87,20,Cotton Stalk from Cotton often used for compost in rural processors
+Jute,Jute Leaves,Animal Feed,73.57,144.76,2038.03,3.27,5,Jute Leaves from Jute often used for animal feed in rural processors
+Banana,Banana Stem,Biofuel,88.98,285.48,4594.92,14.14,5,Banana Stem from Banana often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,73.28,127.48,4953.55,7.62,4,Jute Leaves from Jute often used for biogas in rural processors
+Sugarcane,Bagasse,Biofuel,76.66,194.53,3520.46,17.45,3,Bagasse from Sugarcane often used for biofuel in rural processors
+Jute,Jute Stick,Paper Pulp,78.84,277.55,6104.28,6.99,3,Jute Stick from Jute often used for paper pulp in rural processors
+Maize,Maize Stalk,Briquettes,67.8,150.95,4928.76,15.07,5,Maize Stalk from Maize often used for briquettes in rural processors
+Jute,Jute Leaves,Compost,86.69,193.01,3190.31,1.94,19,Jute Leaves from Jute often used for compost in rural processors
+Wheat,Wheat Chaff,Biofuel,69.87,181.8,4359.3,17.03,2,Wheat Chaff from Wheat often used for biofuel in rural processors
+Rice,Paddy Straw,Biofuel,66.88,314.36,3367.03,17.41,18,Paddy Straw from Rice often used for biofuel in rural processors
+Banana,Banana Stem,Biofuel,77.25,182.33,4297.53,11.57,20,Banana Stem from Banana often used for biofuel in rural processors
+Sugarcane,Bagasse,Biogas,55.51,221.31,2870.73,9.32,15,Bagasse from Sugarcane often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Paper Pulp,76.83,169.35,4789.74,7.53,11,Cotton Gin Waste from Cotton often used for paper pulp in rural processors
+Cotton,Cotton Gin Waste,Biofuel,70.95,130.96,3817.69,19.84,8,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Rice,Rice Husk,Biochar,72.47,304.34,3955.49,8.08,14,Rice Husk from Rice often used for biochar in rural processors
+Banana,Banana Stem,Compost,73.9,141.07,2419.51,2.36,4,Banana Stem from Banana often used for compost in rural processors
+Jute,Jute Leaves,Animal Feed,69.15,100.53,2772.08,4.2,12,Jute Leaves from Jute often used for animal feed in rural processors
+Rice,Rice Husk,Biochar,63.35,193.53,5732.15,16.44,18,Rice Husk from Rice often used for biochar in rural processors
+Sugarcane,Sugarcane Trash,Briquettes,85.14,275.82,3305.52,12.22,5,Sugarcane Trash from Sugarcane often used for briquettes in rural processors
+Banana,Banana Stem,Briquettes,84.64,283.01,3945.08,18.19,6,Banana Stem from Banana often used for briquettes in rural processors
+Maize,Maize Cob,Briquettes,81.26,251.1,3708.58,17.6,17,Maize Cob from Maize often used for briquettes in rural processors
+Cotton,Cotton Gin Waste,Animal Feed,87.35,148.94,3298.85,3.82,12,Cotton Gin Waste from Cotton often used for animal feed in rural processors
+Rice,Rice Husk,Biofuel,77.66,279.27,5365.68,16.31,13,Rice Husk from Rice often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,77.2,286.34,3306.92,10.57,4,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Groundnut,Groundnut Stover,Briquettes,79.97,299.18,4798.93,17.92,20,Groundnut Stover from Groundnut often used for briquettes in rural processors
+Banana,Banana Stem,Biofuel,78.54,210.1,6243.87,19.58,12,Banana Stem from Banana often used for biofuel in rural processors
+Sugarcane,Bagasse,Biofuel,71.69,207.88,5090.99,14.38,7,Bagasse from Sugarcane often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,63.56,222.2,2167.57,10.42,12,Jute Leaves from Jute often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Compost,79.53,115.28,3203.13,1.47,6,Sugarcane Trash from Sugarcane often used for compost in rural processors
+Jute,Jute Stick,Briquettes,82.92,182.05,5624.22,19.17,14,Jute Stick from Jute often used for briquettes in rural processors
+Rice,Paddy Straw,Briquettes,80.09,185.7,3511.18,16.43,18,Paddy Straw from Rice often used for briquettes in rural processors
+Sugarcane,Sugarcane Trash,Briquettes,65.49,310.23,4366.93,13.09,17,Sugarcane Trash from Sugarcane often used for briquettes in rural processors
+Banana,Banana Peel,Compost,65.42,190.34,2515.38,1.24,19,Banana Peel from Banana often used for compost in rural processors
+Wheat,Wheat Chaff,Biochar,83.49,173.94,3977.64,13.97,7,Wheat Chaff from Wheat often used for biochar in rural processors
+Cotton,Cotton Stalk,Biofuel,74.84,313.92,5442.38,17.2,16,Cotton Stalk from Cotton often used for biofuel in rural processors
+Banana,Banana Peel,Biogas,83.8,262.72,2620.85,10.49,20,Banana Peel from Banana often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biochar,70.71,256.04,7354.95,11.82,8,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Rice,Rice Husk,Biofuel,82.31,230.91,3410.36,18.74,18,Rice Husk from Rice often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Compost,86.71,206.74,1794.7,1.18,15,Sugarcane Trash from Sugarcane often used for compost in rural processors
+Sugarcane,Bagasse,Biochar,77.14,145.87,3429.0,11.5,18,Bagasse from Sugarcane often used for biochar in rural processors
+Jute,Jute Stick,Paper Pulp,94.86,154.79,6292.48,5.25,12,Jute Stick from Jute often used for paper pulp in rural processors
+Rice,Paddy Straw,Compost,70.04,177.45,1777.59,2.57,17,Paddy Straw from Rice often used for compost in rural processors
+Cotton,Cotton Stalk,Compost,60.67,100.93,3380.45,1.04,18,Cotton Stalk from Cotton often used for compost in rural processors
+Groundnut,Groundnut Shell,Biochar,69.03,192.46,5947.49,9.22,16,Groundnut Shell from Groundnut often used for biochar in rural processors
+Sugarcane,Bagasse,Biochar,94.4,143.62,5416.12,13.97,9,Bagasse from Sugarcane often used for biochar in rural processors
+Rice,Rice Husk,Compost,60.05,159.89,1874.63,1.38,4,Rice Husk from Rice often used for compost in rural processors
+Jute,Jute Stick,Briquettes,79.69,221.52,3081.34,17.86,17,Jute Stick from Jute often used for briquettes in rural processors
+Wheat,Wheat Chaff,Compost,68.88,190.39,2189.6,0.54,5,Wheat Chaff from Wheat often used for compost in rural processors
+Jute,Jute Stick,Biofuel,74.51,248.56,6321.53,13.39,16,Jute Stick from Jute often used for biofuel in rural processors
+Cotton,Cotton Stalk,Biogas,52.21,182.38,2939.02,10.43,3,Cotton Stalk from Cotton often used for biogas in rural processors
+Banana,Banana Peel,Biogas,82.67,278.04,3737.7,8.61,10,Banana Peel from Banana often used for biogas in rural processors
+Wheat,Wheat Straw,Briquettes,74.64,293.16,4327.7,17.81,5,Wheat Straw from Wheat often used for briquettes in rural processors
+Jute,Jute Leaves,Biogas,76.02,169.6,5115.92,11.26,17,Jute Leaves from Jute often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biochar,79.73,299.96,3539.39,16.01,7,Cotton Gin Waste from Cotton often used for biochar in rural processors
+Maize,Maize Stalk,Compost,62.8,122.91,2705.24,2.15,15,Maize Stalk from Maize often used for compost in rural processors
+Rice,Rice Husk,Biochar,76.99,340.55,5843.86,15.27,15,Rice Husk from Rice often used for biochar in rural processors
+Maize,Maize Cob,Briquettes,83.12,222.62,5999.59,14.06,7,Maize Cob from Maize often used for briquettes in rural processors
+Wheat,Wheat Straw,Biofuel,65.94,275.7,4465.31,10.67,14,Wheat Straw from Wheat often used for biofuel in rural processors
+Wheat,Wheat Straw,Biofuel,90.62,272.62,5295.69,13.72,18,Wheat Straw from Wheat often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,72.73,120.42,4354.16,6.75,17,Jute Leaves from Jute often used for biogas in rural processors
+Groundnut,Groundnut Shell,Biochar,89.45,187.21,5831.07,15.04,17,Groundnut Shell from Groundnut often used for biochar in rural processors
+Banana,Banana Peel,Compost,89.85,205.82,2390.22,1.63,4,Banana Peel from Banana often used for compost in rural processors
+Jute,Jute Leaves,Animal Feed,57.27,184.79,3843.27,3.71,7,Jute Leaves from Jute often used for animal feed in rural processors
+Jute,Jute Stick,Biofuel,91.6,167.35,4976.09,17.92,13,Jute Stick from Jute often used for biofuel in rural processors
+Jute,Jute Leaves,Animal Feed,59.54,69.2,2755.58,5.42,17,Jute Leaves from Jute often used for animal feed in rural processors
+Groundnut,Groundnut Stover,Biochar,81.85,209.75,3518.91,9.25,16,Groundnut Stover from Groundnut often used for biochar in rural processors
+Jute,Jute Stick,Biochar,89.65,180.03,7354.94,14.4,15,Jute Stick from Jute often used for biochar in rural processors
+Wheat,Wheat Straw,Biogas,60.64,268.25,2721.5,6.13,18,Wheat Straw from Wheat often used for biogas in rural processors
+Maize,Maize Cob,Biofuel,70.3,174.89,5500.09,19.56,19,Maize Cob from Maize often used for biofuel in rural processors
+Sugarcane,Bagasse,Briquettes,90.42,251.75,5882.53,11.54,12,Bagasse from Sugarcane often used for briquettes in rural processors
+Wheat,Wheat Straw,Compost,61.59,160.75,2802.26,2.1,20,Wheat Straw from Wheat often used for compost in rural processors
+Groundnut,Groundnut Shell,Compost,91.11,169.87,2104.19,1.86,9,Groundnut Shell from Groundnut often used for compost in rural processors
+Groundnut,Groundnut Stover,Paper Pulp,71.82,224.73,4952.75,3.36,8,Groundnut Stover from Groundnut often used for paper pulp in rural processors
+Jute,Jute Stick,Compost,90.15,218.32,2190.74,1.3,14,Jute Stick from Jute often used for compost in rural processors
+Rice,Rice Husk,Biofuel,73.62,173.49,3991.68,14.66,5,Rice Husk from Rice often used for biofuel in rural processors
+Wheat,Wheat Chaff,Paper Pulp,91.6,313.66,6206.93,5.51,12,Wheat Chaff from Wheat often used for paper pulp in rural processors
+Jute,Jute Stick,Biochar,66.06,242.7,6980.03,17.96,17,Jute Stick from Jute often used for biochar in rural processors
+Wheat,Wheat Straw,Biofuel,78.65,163.03,4411.58,19.67,3,Wheat Straw from Wheat often used for biofuel in rural processors
+Maize,Maize Stalk,Biofuel,72.72,141.5,3535.74,10.08,10,Maize Stalk from Maize often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,51.58,201.13,3160.08,5.36,11,Jute Leaves from Jute often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,85.64,317.82,5721.59,12.8,5,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Rice,Paddy Straw,Biofuel,75.08,231.57,4462.43,19.87,6,Paddy Straw from Rice often used for biofuel in rural processors
+Banana,Banana Stem,Compost,61.59,126.63,2447.49,0.84,16,Banana Stem from Banana often used for compost in rural processors
+Rice,Paddy Straw,Briquettes,90.15,198.59,5466.0,13.19,11,Paddy Straw from Rice often used for briquettes in rural processors
+Jute,Jute Leaves,Animal Feed,74.7,62.33,2594.98,3.37,5,Jute Leaves from Jute often used for animal feed in rural processors
+Groundnut,Groundnut Stover,Biochar,94.15,278.44,5766.71,16.72,10,Groundnut Stover from Groundnut often used for biochar in rural processors
+Banana,Banana Peel,Animal Feed,71.82,160.97,3659.05,3.62,14,Banana Peel from Banana often used for animal feed in rural processors
+Rice,Paddy Straw,Compost,80.04,106.71,2382.08,2.25,15,Paddy Straw from Rice often used for compost in rural processors
+Rice,Rice Husk,Briquettes,76.08,304.1,6491.27,17.75,3,Rice Husk from Rice often used for briquettes in rural processors
+Rice,Paddy Straw,Briquettes,91.95,195.36,6826.74,14.78,16,Paddy Straw from Rice often used for briquettes in rural processors
+Jute,Jute Leaves,Animal Feed,82.02,150.06,3463.95,4.6,17,Jute Leaves from Jute often used for animal feed in rural processors
+Banana,Banana Peel,Biogas,69.53,275.12,2952.37,6.57,11,Banana Peel from Banana often used for biogas in rural processors
+Banana,Banana Stem,Briquettes,77.95,306.9,5886.66,15.6,11,Banana Stem from Banana often used for briquettes in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,87.1,280.92,4161.81,19.55,11,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,82.71,162.8,6311.81,17.47,10,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Maize,Maize Cob,Briquettes,81.62,168.49,5679.34,15.87,18,Maize Cob from Maize often used for briquettes in rural processors
+Banana,Banana Peel,Compost,63.51,146.14,2862.38,1.33,6,Banana Peel from Banana often used for compost in rural processors
+Wheat,Wheat Straw,Biofuel,82.63,215.14,5602.15,18.81,11,Wheat Straw from Wheat often used for biofuel in rural processors
+Jute,Jute Leaves,Animal Feed,57.07,151.32,2357.33,4.84,3,Jute Leaves from Jute often used for animal feed in rural processors
+Rice,Rice Husk,Briquettes,90.22,287.24,6151.84,10.36,7,Rice Husk from Rice often used for briquettes in rural processors
+Maize,Maize Cob,Briquettes,73.06,305.69,4340.17,16.03,16,Maize Cob from Maize often used for briquettes in rural processors
+Cotton,Cotton Stalk,Biofuel,72.37,186.14,5924.48,18.09,10,Cotton Stalk from Cotton often used for biofuel in rural processors
+Rice,Paddy Straw,Briquettes,86.35,271.46,3701.98,15.68,14,Paddy Straw from Rice often used for briquettes in rural processors
+Groundnut,Groundnut Stover,Biofuel,75.82,316.34,4909.82,10.95,9,Groundnut Stover from Groundnut often used for biofuel in rural processors
+Wheat,Wheat Chaff,Paper Pulp,75.89,312.19,4405.84,7.52,20,Wheat Chaff from Wheat often used for paper pulp in rural processors
+Wheat,Wheat Chaff,Animal Feed,67.58,153.49,2916.95,2.18,7,Wheat Chaff from Wheat often used for animal feed in rural processors
+Groundnut,Groundnut Stover,Animal Feed,59.11,101.31,3275.1,5.58,9,Groundnut Stover from Groundnut often used for animal feed in rural processors
+Rice,Rice Husk,Briquettes,77.28,194.72,5807.76,19.89,17,Rice Husk from Rice often used for briquettes in rural processors
+Banana,Banana Peel,Animal Feed,81.42,71.46,2872.2,5.37,13,Banana Peel from Banana often used for animal feed in rural processors
+Sugarcane,Bagasse,Biofuel,87.38,160.43,5146.64,19.03,7,Bagasse from Sugarcane often used for biofuel in rural processors
+Jute,Jute Leaves,Compost,83.81,148.44,3297.78,2.29,16,Jute Leaves from Jute often used for compost in rural processors
+Wheat,Wheat Chaff,Biogas,67.96,110.39,3479.61,8.2,11,Wheat Chaff from Wheat often used for biogas in rural processors
+Wheat,Wheat Chaff,Compost,88.58,160.96,1590.58,2.36,13,Wheat Chaff from Wheat often used for compost in rural processors
+Sugarcane,Bagasse,Biofuel,91.63,177.42,3719.93,14.72,6,Bagasse from Sugarcane often used for biofuel in rural processors
+Groundnut,Groundnut Stover,Paper Pulp,81.21,214.17,3740.75,8.5,19,Groundnut Stover from Groundnut often used for paper pulp in rural processors
+Rice,Rice Husk,Biofuel,69.82,225.77,5911.43,15.37,9,Rice Husk from Rice often used for biofuel in rural processors
+Wheat,Wheat Straw,Briquettes,77.5,204.83,4517.11,17.19,9,Wheat Straw from Wheat often used for briquettes in rural processors
+Banana,Banana Stem,Briquettes,69.19,295.04,6061.96,11.88,3,Banana Stem from Banana often used for briquettes in rural processors
+Groundnut,Groundnut Shell,Briquettes,70.56,126.72,5391.14,11.01,3,Groundnut Shell from Groundnut often used for briquettes in rural processors
+Banana,Banana Peel,Biogas,65.36,235.79,4483.4,8.78,6,Banana Peel from Banana often used for biogas in rural processors
+Maize,Maize Cob,Animal Feed,75.16,168.16,3764.12,3.89,9,Maize Cob from Maize often used for animal feed in rural processors
+Maize,Maize Cob,Animal Feed,73.24,98.52,3136.12,3.07,20,Maize Cob from Maize often used for animal feed in rural processors
+Rice,Rice Husk,Compost,61.64,170.06,2262.31,1.36,18,Rice Husk from Rice often used for compost in rural processors
+Jute,Jute Leaves,Biogas,55.22,235.79,3515.26,7.64,9,Jute Leaves from Jute often used for biogas in rural processors
+Maize,Maize Cob,Biofuel,89.7,313.56,5229.15,15.62,6,Maize Cob from Maize often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Biochar,67.73,342.89,6842.67,14.47,4,Groundnut Shell from Groundnut often used for biochar in rural processors
+Banana,Banana Peel,Biogas,63.2,107.12,2232.91,9.23,20,Banana Peel from Banana often used for biogas in rural processors
+Banana,Banana Stem,Biogas,80.43,272.26,2049.07,7.33,8,Banana Stem from Banana often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Biogas,74.35,171.39,2765.86,9.93,12,Sugarcane Trash from Sugarcane often used for biogas in rural processors
+Maize,Maize Stalk,Biofuel,79.41,172.31,5051.27,13.59,17,Maize Stalk from Maize often used for biofuel in rural processors
+Cotton,Cotton Stalk,Biofuel,85.56,160.63,4251.69,13.2,3,Cotton Stalk from Cotton often used for biofuel in rural processors
+Banana,Banana Peel,Compost,69.13,161.08,2335.16,2.84,6,Banana Peel from Banana often used for compost in rural processors
+Banana,Banana Stem,Biogas,63.29,189.87,4094.75,10.83,12,Banana Stem from Banana often used for biogas in rural processors
+Maize,Maize Stalk,Biofuel,77.44,190.44,3559.83,17.33,19,Maize Stalk from Maize often used for biofuel in rural processors
+Cotton,Cotton Stalk,Compost,78.34,90.41,3135.99,2.6,3,Cotton Stalk from Cotton often used for compost in rural processors
+Wheat,Wheat Chaff,Biogas,79.49,227.29,2029.25,6.62,18,Wheat Chaff from Wheat often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biofuel,81.68,243.3,4932.82,16.67,17,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Wheat,Wheat Straw,Biofuel,65.32,174.95,6909.92,15.29,2,Wheat Straw from Wheat often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Biofuel,89.79,168.19,5479.12,15.24,10,Groundnut Shell from Groundnut often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,52.77,182.62,2778.27,11.72,9,Jute Leaves from Jute often used for biogas in rural processors
+Maize,Maize Cob,Animal Feed,89.71,64.44,2772.67,4.25,14,Maize Cob from Maize often used for animal feed in rural processors
+Cotton,Cotton Stalk,Compost,84.6,198.35,2789.81,0.71,12,Cotton Stalk from Cotton often used for compost in rural processors
+Sugarcane,Bagasse,Biogas,57.4,259.76,3521.6,11.08,3,Bagasse from Sugarcane often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Compost,66.28,82.19,1914.32,2.63,6,Sugarcane Trash from Sugarcane often used for compost in rural processors
+Groundnut,Groundnut Shell,Biochar,66.17,323.62,4873.37,10.4,19,Groundnut Shell from Groundnut often used for biochar in rural processors
+Jute,Jute Leaves,Animal Feed,59.9,161.38,3001.9,5.94,13,Jute Leaves from Jute often used for animal feed in rural processors
+Wheat,Wheat Straw,Biofuel,71.27,241.03,5455.46,10.76,14,Wheat Straw from Wheat often used for biofuel in rural processors
+Jute,Jute Stick,Animal Feed,64.57,128.68,2653.95,5.96,14,Jute Stick from Jute often used for animal feed in rural processors
+Groundnut,Groundnut Shell,Compost,63.0,191.73,2926.22,2.05,4,Groundnut Shell from Groundnut often used for compost in rural processors
+Maize,Maize Cob,Biofuel,84.22,267.93,4266.71,16.34,5,Maize Cob from Maize often used for biofuel in rural processors
+Sugarcane,Bagasse,Compost,75.57,94.31,1674.59,2.4,15,Bagasse from Sugarcane often used for compost in rural processors
+Cotton,Cotton Gin Waste,Biofuel,65.71,138.61,5392.18,13.54,12,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Biochar,75.72,299.47,5606.01,15.79,9,Groundnut Shell from Groundnut often used for biochar in rural processors
+Rice,Rice Husk,Briquettes,68.75,218.62,3253.07,13.01,15,Rice Husk from Rice often used for briquettes in rural processors
+Maize,Maize Stalk,Briquettes,78.07,170.34,3986.36,10.77,17,Maize Stalk from Maize often used for briquettes in rural processors
+Banana,Banana Stem,Compost,64.74,135.4,3183.23,0.52,14,Banana Stem from Banana often used for compost in rural processors
+Jute,Jute Leaves,Biogas,65.07,217.19,3902.06,10.76,11,Jute Leaves from Jute often used for biogas in rural processors
+Jute,Jute Stick,Paper Pulp,77.85,314.68,4374.34,8.79,17,Jute Stick from Jute often used for paper pulp in rural processors
+Banana,Banana Stem,Biofuel,72.57,193.0,6728.27,17.86,8,Banana Stem from Banana often used for biofuel in rural processors
+Rice,Paddy Straw,Biofuel,90.46,279.54,6325.13,12.1,4,Paddy Straw from Rice often used for biofuel in rural processors
+Groundnut,Groundnut Stover,Biogas,72.17,218.56,4288.76,6.69,14,Groundnut Stover from Groundnut often used for biogas in rural processors
+Sugarcane,Sugarcane Trash,Biofuel,80.72,304.7,6478.53,15.34,15,Sugarcane Trash from Sugarcane often used for biofuel in rural processors
+Wheat,Wheat Chaff,Animal Feed,86.34,149.35,2003.96,3.68,9,Wheat Chaff from Wheat often used for animal feed in rural processors
+Jute,Jute Stick,Animal Feed,76.44,150.3,3352.18,3.82,12,Jute Stick from Jute often used for animal feed in rural processors
+Groundnut,Groundnut Shell,Biofuel,67.66,269.37,5231.97,12.22,20,Groundnut Shell from Groundnut often used for biofuel in rural processors
+Banana,Banana Stem,Briquettes,75.56,237.72,5001.86,17.72,13,Banana Stem from Banana often used for briquettes in rural processors
+Wheat,Wheat Chaff,Biofuel,72.98,137.17,6325.27,19.21,6,Wheat Chaff from Wheat often used for biofuel in rural processors
+Jute,Jute Leaves,Biogas,65.94,186.93,3523.72,6.45,16,Jute Leaves from Jute often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Biofuel,73.11,143.02,6396.72,18.1,5,Cotton Gin Waste from Cotton often used for biofuel in rural processors
+Rice,Paddy Straw,Biogas,69.32,176.75,3478.57,7.32,14,Paddy Straw from Rice often used for biogas in rural processors
+Rice,Paddy Straw,Biofuel,75.68,296.62,4798.3,17.37,15,Paddy Straw from Rice often used for biofuel in rural processors
+Groundnut,Groundnut Shell,Briquettes,70.56,281.75,3250.26,17.52,5,Groundnut Shell from Groundnut often used for briquettes in rural processors
+Rice,Rice Husk,Biochar,67.49,287.55,5304.78,9.14,12,Rice Husk from Rice often used for biochar in rural processors
+Groundnut,Groundnut Stover,Briquettes,68.08,211.57,3690.11,13.52,11,Groundnut Stover from Groundnut often used for briquettes in rural processors
+Sugarcane,Bagasse,Compost,64.13,105.63,2886.87,1.26,18,Bagasse from Sugarcane often used for compost in rural processors
+Groundnut,Groundnut Stover,Briquettes,68.72,157.15,5542.01,13.84,7,Groundnut Stover from Groundnut often used for briquettes in rural processors
+Rice,Rice Husk,Biochar,65.33,239.22,3430.53,11.15,13,Rice Husk from Rice often used for biochar in rural processors
+Wheat,Wheat Chaff,Biogas,56.83,201.08,4089.82,7.69,15,Wheat Chaff from Wheat often used for biogas in rural processors
+Cotton,Cotton Gin Waste,Animal Feed,84.4,71.57,1874.07,3.44,9,Cotton Gin Waste from Cotton often used for animal feed in rural processors
+Maize,Maize Cob,Biofuel,71.07,276.15,5262.6,12.89,17,Maize Cob from Maize often used for biofuel in rural processors
+Sugarcane,Bagasse,Compost,87.13,131.36,3145.22,2.56,3,Bagasse from Sugarcane often used for compost in rural processors
+Cotton,Cotton Stalk,Biofuel,67.77,270.27,4190.84,18.3,3,Cotton Stalk from Cotton often used for biofuel in rural processors
+Cotton,Cotton Gin Waste,Compost,90.18,201.14,1734.77,0.72,9,Cotton Gin Waste from Cotton often used for compost in rural processors

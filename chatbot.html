@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriBot – Agriculture Chatbot | AgriWaste to Worth</title>
+    <meta name="description" content="Ask AgriBot about crop waste prices, repurposing tips, government schemes, biogas, composting and more.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ---- Chatbot Page Styles ---- */
+        .chatbot-page-wrapper {
+            min-height: calc(100vh - 80px);
+            background: linear-gradient(135deg, #f0fdf4 0%, #e8f5e9 100%);
+            display: flex;
+            align-items: stretch;
+        }
+        .chatbot-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 0;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        @media(max-width:768px){
+            .chatbot-layout { grid-template-columns: 1fr; }
+            .chat-sidebar { display: none; }
+        }
+        .chat-sidebar {
+            background: #fff;
+            border-radius: 16px 0 0 16px;
+            padding: 1.5rem;
+            border-right: 1px solid #e8f5e9;
+            box-shadow: 4px 0 20px rgba(46,204,113,0.05);
+        }
+        .chat-sidebar h4 {
+            color: #2ecc71;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        .sidebar-topic {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.6rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #555;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            margin-bottom: 0.25rem;
+        }
+        .sidebar-topic:hover {
+            background: #f0fdf4;
+            color: #27ae60;
+        }
+        .sidebar-topic i { width: 20px; text-align: center; color: #2ecc71; }
+        .sidebar-divider { border: 0; border-top: 1px solid #eee; margin: 1rem 0; }
+        .chatbot-wrapper {
+            background: #fff;
+            border-radius: 0 16px 16px 0;
+            display: flex;
+            flex-direction: column;
+            height: 74vh;
+            min-height: 500px;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .chat-header {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: #fff;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .chat-header-info { display: flex; align-items: center; gap: 1rem; }
+        .bot-avatar {
+            width: 44px; height: 44px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .chat-header h3 { margin: 0; font-size: 1.1rem; }
+        .online-status { font-size: 0.78rem; opacity: 0.9; }
+        .online-status i { color: #a8ff78; font-size: 0.5rem; margin-right: 4px; }
+        .chat-header .btn-icon { background: rgba(255,255,255,0.2); color: #fff; border: none; border-radius: 8px; padding: 0.5rem 0.75rem; cursor: pointer; transition: background 0.2s; }
+        .chat-header .btn-icon:hover { background: rgba(255,255,255,0.35); }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            background: #f8fffe;
+        }
+        .chat-message {
+            display: flex;
+            gap: 0.75rem;
+            max-width: 85%;
+            animation: msgIn 0.3s ease;
+        }
+        @keyframes msgIn { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+        .chat-message.user { flex-direction: row-reverse; align-self: flex-end; }
+        .message-avatar {
+            width: 36px; height: 36px; flex-shrink: 0;
+            background: #e8f5e9;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.9rem; color: #27ae60;
+        }
+        .chat-message.user .message-avatar { background: #3498db; color: #fff; }
+        .message-bubble {
+            background: #fff;
+            border-radius: 16px 16px 16px 4px;
+            padding: 0.75rem 1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        .chat-message.user .message-bubble {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: #fff;
+            border-radius: 16px 16px 4px 16px;
+        }
+        .message-bubble p { margin: 0; }
+        .message-time {
+            display: block; font-size: 0.7rem;
+            opacity: 0.5; margin-top: 4px; text-align: right;
+        }
+        /* Typing dots */
+        .typing { display: flex; align-items: center; gap: 4px; padding: 1rem 1.25rem; }
+        .typing span {
+            width: 7px; height: 7px;
+            background: #27ae60; border-radius: 50%;
+            animation: bounce 1.2s infinite;
+        }
+        .typing span:nth-child(2) { animation-delay: 0.2s; }
+        .typing span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-8px)} }
+        /* Quick replies */
+        .quick-replies {
+            padding: 0.75rem 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            background: #fff;
+            border-top: 1px solid #f0f0f0;
+        }
+        .quick-replies button {
+            background: #f0fdf4;
+            border: 1px solid #c8e6c9;
+            color: #27ae60;
+            border-radius: 20px;
+            padding: 0.4rem 0.9rem;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .quick-replies button:hover { background: #27ae60; color: #fff; border-color: #27ae60; }
+        .chat-input-area {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem 1.25rem;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+        .chat-input-area input {
+            flex: 1;
+            border: 1.5px solid #ddd;
+            border-radius: 25px;
+            padding: 0.65rem 1.25rem;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .chat-input-area input:focus { border-color: #2ecc71; }
+        .send-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 44px; height: 44px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.15s, box-shadow 0.15s;
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+        .send-btn:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(46,204,113,0.4); }
+    
+        /* Markdown tables in chat */
+        .chat-message .message-bubble table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0.8rem 0;
+            font-size: 0.82rem;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+            border: 1px solid #e1eedd;
+        }
+        .chat-message .message-bubble th {
+            background: #27ae60;
+            color: #ffffff;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+        }
+        .chat-message .message-bubble td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #edf2f0;
+            color: #333333;
+        }
+        .chat-message .message-bubble tr:nth-child(even) td {
+            background: #f8faf8;
+        }
+        .chat-message .message-bubble h3, 
+        .chat-message .message-bubble h4 {
+            color: #27ae60;
+            margin: 0.6rem 0 0.3rem 0;
+            font-size: 0.95rem;
+        }
+        .chat-message .message-bubble ul, 
+        .chat-message .message-bubble ol {
+            margin: 0.4rem 0 0.6rem 1.2rem;
+            padding: 0;
+        }
+        .chat-message .message-bubble li {
+            margin-bottom: 0.25rem;
+        }
+        /* Voice / Mic Controls */
+        .mic-btn {
+            background: #f0fdf4;
+            color: #27ae60;
+            border: 1.5px solid #2ecc71;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .mic-btn:hover {
+            background: #27ae60;
+            color: #fff;
+        }
+        .mic-btn.recording {
+            background: #e74c3c !important;
+            color: #fff !important;
+            border-color: #c0392b !important;
+            animation: pulse-red 1s infinite;
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.6); }
+            70% { box-shadow: 0 0 0 10px rgba(231, 76, 60, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 76, 60, 0); }
+        }
+        .listen-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            margin-top: 8px;
+            padding: 4px 10px;
+            font-size: 0.74rem;
+            color: #27ae60;
+            background: #f0fdf4;
+            border: 1px solid #c8e6c9;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .listen-btn:hover {
+            background: #27ae60;
+            color: #fff;
+        }
+        .listen-btn.playing {
+            background: #e67e22;
+            color: #fff;
+            border-color: #d35400;
+        }
+        .meta-badge {
+            display: inline-block;
+            font-size: 0.68rem;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-leaf"></i>
+                <span>AgriWaste to Worth</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="ai-analyzer.html">AI Analyzer</a></li>
+                <li><a href="chatbot.html" class="active">Chatbot</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="badge" id="cartBadge">0</span></button>
+                <button class="btn-icon" id="notificationBtn"><i class="fas fa-bell"></i><span class="badge" id="notifBadge">0</span></button>
+                <div class="user-menu" id="userMenu" style="display:none">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <span class="user-name">Guest</span>
+                    <button class="btn-text" id="logoutBtn" style="margin-left:12px">Logout</button>
+                </div>
+                <button class="btn-primary" id="loginBtn">Login</button>
+                <button class="btn-secondary" id="signupBtn">Sign Up</button>
+            </div>
+            <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>🤖 AgriBot – Your Agriculture AI Assistant</h1>
+            <p>Real-time agricultural market rates, mandi intelligence, crop residue valuation, government subsidies & repurposing</p>
+        </div>
+    </section>
+
+    <!-- Chatbot Layout -->
+    <div class="chatbot-page-wrapper">
+        <div class="chatbot-layout">
+            <!-- Sidebar Topics -->
+            <div class="chat-sidebar">
+                <h4>Quick Topics</h4>
+                <div class="sidebar-topic" onclick="sendQuickReply('What is the price of rice husk?')">
+                    <i class="fas fa-seedling"></i> Rice Husk
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Tell me about wheat straw uses')">
+                    <i class="fas fa-wheat-awn"></i> Wheat Straw
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Sugarcane bagasse information')">
+                    <i class="fas fa-leaf"></i> Sugarcane Bagasse
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Cotton stalk waste management')">
+                    <i class="fas fa-circle-dot"></i> Cotton Stalks
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Corn stover and maize waste')">
+                    <i class="fas fa-corn"></i> Corn Stover
+                </div>
+                <hr class="sidebar-divider">
+                <h4>Learn & Earn</h4>
+                <div class="sidebar-topic" onclick="sendQuickReply('How to make biogas from crop waste?')">
+                    <i class="fas fa-gas-pump"></i> Biogas Production
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Composting tips for farm waste')">
+                    <i class="fas fa-recycle"></i> Composting
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Grow mushrooms on wheat straw')">
+                    <i class="fas fa-biohazard"></i> Mushroom Farming
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Soil health improvement tips')">
+                    <i class="fas fa-earth-asia"></i> Soil Health
+                </div>
+                <hr class="sidebar-divider">
+                <h4>Policy & Support</h4>
+                <div class="sidebar-topic" onclick="sendQuickReply('Government subsidy schemes for waste')">
+                    <i class="fas fa-university"></i> Subsidies
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Why not burn crop residue?')">
+                    <i class="fas fa-fire"></i> Stop Burning
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('Logistics and transport for biomass selling')">
+                    <i class="fas fa-truck"></i> Transport
+                </div>
+                <div class="sidebar-topic" onclick="sendQuickReply('What are current biomass market rates?')">
+                    <i class="fas fa-chart-line"></i> Market Prices
+                </div>
+            </div>
+
+            <!-- Chat Interface -->
+            <div id="chatbotContainer"></div>
+        </div>
+    </div>
+
+    <!-- Auth Modal (from index.html) -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="auth-container">
+                <div class="auth-form" id="loginForm">
+                    <h2>Welcome Back</h2>
+                    <form>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Login</button>
+                        <p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign Up</a></p>
+                    </form>
+                </div>
+                <div class="auth-form hidden" id="signupForm">
+                    <h2>Create Account</h2>
+                    <form>
+                        <div class="form-group"><label>Full Name</label><input type="text" id="signupName" required></div>
+                        <div class="form-group"><label>Email</label><input type="email" id="signupEmail" required></div>
+                        <div class="form-group"><label>Password</label><input type="password" id="signupPassword" required></div>
+                        <div class="form-group">
+                            <label>User Type</label>
+                            <select id="userType" required>
+                                <option value="farmer">Farmer</option>
+                                <option value="aggregator">Aggregator</option>
+                                <option value="buyer">Buyer</option>
+                                <option value="processor">Processor</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary btn-block">Sign Up</button>
+                        <p class="auth-switch">Already have an account? <a href="#" id="showLogin">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

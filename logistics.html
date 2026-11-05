@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Logistics & Routing - AgriWaste to Worth</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .logistics-container {
+            display: flex;
+            height: calc(100vh - 70px); /* Fill rest of screen below navbar */
+            overflow: hidden;
+            background: #f4f7f6;
+        }
+        
+        .sidebar-panel {
+            width: 350px;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            background: #fff;
+        }
+
+        .sidebar-header h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.25rem;
+            color: #2c3e50;
+        }
+
+        .sidebar-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sidebar-actions button {
+            flex: 1;
+            padding: 10px;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-optimize { background: #2ecc71; color: white; }
+        .btn-optimize:hover { background: #27ae60; }
+        .btn-cluster { background: #3498db; color: white; }
+        .btn-cluster:hover { background: #2980b9; }
+
+        .pickup-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .pickup-item {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-left: 4px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        
+        .pickup-item:hover {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+        }
+
+        .pickup-item.high-risk { border-left-color: #e74c3c; background: #fff0f0; }
+        .pickup-item.medium-risk { border-left-color: #f39c12; background: #fffaf0; }
+        .pickup-item.low-risk { border-left-color: #2ecc71; }
+        .pickup-item.clustered { border-left-color: #9b59b6; background: #f9f0ff; }
+
+        .pickup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .pickup-header h4 { margin: 0; font-size: 1rem; color: #333; }
+        .badge {
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 12px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .badge.bg-red { background: #e74c3c; }
+        .badge.bg-yellow { background: #f39c12; }
+        .badge.bg-green { background: #2ecc71; }
+
+        /* Completion Action */
+        .pickup-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-complete {
+            background: none;
+            border: none;
+            color: #2ecc71;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.2s;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-complete:hover {
+            color: #27ae60;
+            transform: scale(1.2);
+        }
+
+        /* Payment Modal Specific */
+        #paymentModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 5000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .payment-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .payment-icon {
+            font-size: 3rem;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .payment-amount {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .payment-details {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+        }
+
+        .pickup-details {
+            font-size: 0.85rem;
+            color: #666;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        .pickup-details i { width: 16px; text-align: center; margin-right: 5px; color: #999; }
+
+        .map-panel {
+            flex: 1;
+            position: relative;
+        }
+
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Stats Overlay */
+        .route-stats-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            min-width: 250px;
+            display: none; /* hidden initially */
+            z-index: 100;
+        }
+        .route-stats-overlay h3 { margin: 0 0 10px 0; font-size: 1.1rem; color: #2c3e50;}
+        .stat-line { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.9rem; }
+        .stat-line strong { color: #333; }
+        
+        .loader-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255,255,255,0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+        }
+        .spinner { animation: spin 1s linear infinite; font-size: 2rem; color: #2ecc71; margin-bottom: 10px; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-leaf"></i>
+                <span>AgriWaste to Worth</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html">Marketplace</a></li>
+                <li><a href="ai-analyzer.html">AI Analyzer</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="logistics.html" class="active">Logistics Fleet</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="cartBtn"><i class="fas fa-shopping-cart"></i><span class="badge" id="cartBadge">0</span></button>
+                <button class="btn-icon" id="notificationBtn"><i class="fas fa-bell"></i><span class="badge" id="notifBadge">0</span></button>
+                <div class="user-menu" id="userMenu" style="display:none">
+                    <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+                    <span class="user-name">Guest</span>
+                    <button class="btn-text" id="logoutBtn" style="margin-left:12px">Logout</button>
+                </div>
+                <button class="btn-primary" id="loginBtn">Login</button>
+                <button class="btn-secondary" id="signupBtn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="logistics-container">
+        <!-- Sidebar -->
+        <div class="sidebar-panel">
+            <div class="sidebar-header">
+                <h2>Pending Pickups</h2>
+                <div class="sidebar-actions">
+                    <button class="btn-cluster" onclick="window.clusterPickups()"><i class="fas fa-object-group"></i> Cluster</button>
+                    <button class="btn-optimize" onclick="window.optimizeRoute()"><i class="fas fa-route"></i> Optimize</button>
+                </div>
+            </div>
+            <div class="pickup-list" id="pickupList">
+                <p style="text-align:center; padding: 20px; color:#999;">Initializing Logistics Data...</p>
+            </div>
+        </div>
+
+        <!-- Map View -->
+        <div class="map-panel">
+            <div id="map"></div>
+            
+            <div class="route-stats-overlay" id="routeStats">
+                <h3><i class="fas fa-chart-line"></i> Route Metrics</h3>
+                <div class="stat-line"><span>Total Distance:</span> <strong id="valDist">-- km</strong></div>
+                <div class="stat-line"><span>Est. Duration:</span> <strong id="valDur">-- hrs</strong></div>
+                <div class="stat-line"><span>Fuel Efficiency:</span> <strong style="color:#2ecc71" id="valEff">Optimal</strong></div>
+            </div>
+            
+            <div class="loader-overlay" id="loader">
+                <i class="fas fa-circle-notch spinner"></i>
+                <h4 id="loaderText">Optimizing Route via AI...</h4>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal">
+        <div class="payment-card">
+            <div class="payment-icon"><i class="fas fa-check-circle"></i></div>
+            <h3>Delivery Confirmed!</h3>
+            <div class="payment-amount" id="paymentAmount">₹0</div>
+            <p class="payment-details" id="paymentDetails">Processing payment to farmer...</p>
+            <button class="btn-primary btn-block" id="confirmPayment">Confirm & Release Payment</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/logistics.js"></script>
+    <script src="js/auth.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMllqkUXgnzQ1mGtADKHsJJjfMYcOwDt0&callback=initMap"></script>
+</body>
+</html>
